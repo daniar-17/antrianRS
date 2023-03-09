@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AntrianRS</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/dist/css/adminlte.min.css" />
+    <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap5.min.css" />
+    <style>
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar elevation-4">
+            <!--sidebar-dark-primary -->
+            <!-- Brand Logo -->
+            <a href="#" class="brand-link bg-secondary">
+                <span class="brand-text font-weight-light"><strong>Rumah Sehat</strong></span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user (optional) -->
+                <hr>
+                <div class="row">
+                    <i class="fas fa-clinic-medical fa-4x text-dark" style="display: block;margin: 0 auto;"></i>
+                </div>
+                <hr>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item">
+                            <a class="nav-link bg-secondary" asp-area="" asp-controller="Antrian" asp-action="Index">
+                                @if (ViewBag.Pasien != "")
+                                {
+                                    <i class="fas fa-check-square text-white fa-lg"></i>
+                                    <p>
+                                        Selamat Datang -
+                                        <i>@ViewBag.Pasien</i>
+                                    </p>
+                                }
+                                else
+                                {
+                                    <i class="far fa-square text-white fa-lg"></i>
+                                    <p>Selamat Datang</p>
+                                }
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link bg-secondary" asp-area="" asp-controller="Antrian" asp-action="Layanan">
+                                @if (ViewBag.Layanan != "")
+                                {
+                                    <i class="fas fa-check-square text-white fa-lg"></i>
+                                    <p>
+                                        Selamat Datang -
+                                        <i>@ViewBag.Layanan</i>
+                                    </p>
+                                }
+                                else
+                                {
+                                    <i class="far fa-square text-white fa-lg"></i>
+                                    <p>Pilih Layanan</p>
+                                }
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link bg-secondary" asp-area="" asp-controller="Antrian" asp-action="MetodePembayaran">
+                                @if (ViewBag.Pembayaran != "")
+                                {
+                                    <i class="fas fa-check-square text-white fa-lg"></i>
+                                    <p>
+                                        Selamat Datang -
+                                        <i>@ViewBag.Pembayaran</i>
+                                    </p>
+                                }
+                                else
+                                {
+                                    <i class="far fa-square text-white fa-lg"></i>
+                                    <p>Pilih Metode Pembayaran</p>
+                                }
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link bg-secondary" asp-area="" asp-controller="Antrian" asp-action="Poli">
+                                @if (ViewBag.Poli != "")
+                                {
+                                    <i class="fas fa-check-square text-white fa-lg"></i>
+                                    <p>
+                                        Selamat Datang -
+                                        <i>@ViewBag.Poli</i>
+                                    </p>
+                                }
+                                else
+                                {
+                                    <i class="far fa-square text-white fa-lg"></i>
+                                    <p>Pilih Poli</p>
+                                }
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link bg-secondary" asp-area="" asp-controller="Antrian" asp-action="Dokter">
+                                @if (ViewBag.Dokter != "")
+                                {
+                                    <i class="fas fa-check-square text-white fa-lg"></i>
+                                    <p>
+                                        Selamat Datang -
+                                        <i>@ViewBag.Dokter</i>
+                                    </p>
+                                }
+                                else
+                                {
+                                    <i class="far fa-square text-white fa-lg"></i>
+                                    <p>Pilih Dokter</p>
+                                }
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link bg-secondary" asp-area="" asp-controller="Antrian" asp-action="DataPasien">
+                                @if (ViewBag.DataPasien != "")
+                                {
+                                    <i class="fas fa-check-square text-white fa-lg"></i>
+                                    <p>
+                                        Isi/Cek Data Pasien -
+                                        <i>@ViewBag.DataPasien</i>
+                                    </p>
+                                }
+                                else
+                                {
+                                    <i class="far fa-square text-white fa-lg"></i>
+                                    <p>Cek Data Pasien</p>
+                                }
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+    </header>
+    <div class="content-wrapper">
+        <!-- Content -->
+        <section class="content">
+            @RenderBody()
+        </section>
+
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - AntrianRS - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/dist/js/adminlte.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.3/js/dataTables.bootstrap5.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿@*
+    
+*@
+
+<div class="text-center">
+    <form method="get" action="/pasien_process">
+
+        <p>
+            @ViewBag.Message
+        </p>
+        <div class="p-3 mb-2 bg-secondary text-white">
+            <h1 class="display-4"><b>Selamat Datang</b></h1>
+        </div>
+        <h2 class="display-4">Di Anjuangan Pintar Kasih Group</h2>
+
+        <h2>Fasilitas Ini Untuk Mempermudah Anda</h2>
+
+        <h2>Apakah Anda</h2>
+        <input type="hidden" id="data_pasien" name="data_pasien" value="checkPasien"/>
+        <button class="btn btn-outline-success btn-lg" type="submit" value="Pasien Lama" name="type_pasien">Pasien Lama</button> |
+        <button class="btn btn-outline-success btn-lg" type="submit" value="Pasien Baru" name="type_pasien">Pasien Baru</button>
+
+    </form>
+</div>

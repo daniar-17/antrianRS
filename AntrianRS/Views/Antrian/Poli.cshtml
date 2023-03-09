@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div class="text-center">
+    <div class="p-3 mb-2 bg-secondary text-white">
+        <h1 class="display-4">Pilih Poli</h1>
+    </div>
+
+    <form method="get" action="/poli">
+        <input type="hidden" id="data_poli" name="data_poli" value="checkPoli" />
+        <div class="row">
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="~/img/dsa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <button class="btn btn-primary" type="submit" value="OBGYN_SPESIALIS" name="type_poli">POLI OBGYN_SPESIALIS</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="~/img/dsa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <button class="btn btn-primary" type="submit" value="ANAK_SPESIALIS" name="type_poli">POLI ANAK_SPESIALIS</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="~/img/dsa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <button class="btn btn-primary" type="submit" value="BEDAH_SPESIALIS" name="type_poli">POLI BEDAH_SPESIALIS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

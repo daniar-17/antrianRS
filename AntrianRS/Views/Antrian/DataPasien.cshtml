@@ -1,0 +1,82 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div class="text-center">
+    <h1 class="display-4">Data Pasien</h1>
+</div>
+
+<div class="card card-outline card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Data Pasien</h3>
+    </div>
+    @if (ViewBag.Pasien != "")
+    {
+        if (ViewBag.Pasien == "Pasien Baru")
+        {
+            <div id="addForm">
+                @Html.Partial("~/Views/Antrian/_AddForm.cshtml")
+            </div>
+        }
+        else
+        {
+            <input type="hidden" id="data_table" name="data_table" value="checkTable" data-makanan="Makanan" data-sipil="WargaSipil" />
+            <div class="card-body">
+                <table id="bootstrap-data-table2" class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr class="font-weight-bold">
+                            <th>#</th>
+                            <th>Action</th>
+                            <th>Id Category</th>
+                            <th>Nama Category</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <button type="button" id="btn-pilih" class="btn btn-warning" onclick="confirmPilih()" data-id="Aman Diki" data-nama="Aman Euy">Pilih</button>
+                            </td>
+                            <td>Aman Diki</td>
+                            <td>Aman Euy</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <button type="button" id="btn-pilih" class="btn btn-warning" onclick="confirmPilih()" data-id="Epul Oleh" data-nama="Epul Euy">Pilih</button>
+                            </td>
+                            <td>Epul Oleh</td>
+                            <td>Epul Euy</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        }
+
+    }
+    else
+    {
+        <div class="card-body">
+            <h4 class="text-danger">Isi Data Pasien Dulu (Pasien Lama / Baru) !!</h4>
+        </div>
+    }
+</div>
+
+@section Scripts
+{
+    <script>
+        //$(function () {
+        //    $("#bootstrap-data-table2").DataTable();
+        //});
+
+        $(document).ready(function () {
+            $('#bootstrap-data-table2').DataTable();
+        });
+
+        function confirmPilih() {
+            var dataId = $("#btn-pilih").attr('data-id');
+            var dataNama = $("#btn-pilih").attr('data-nama');
+        }
+
+    </script>
+}
+

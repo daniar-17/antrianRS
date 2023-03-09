@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<form id="addForm" method="post" action="/pasien_process">
+    <div class="card-body">
+        <div class="form-group">
+            <label for="">Nama</label>
+            <input type="text" class="form-control" id="Nama" name="Nama" placeholder="Nama">
+        </div>
+        <div class="form-group">
+            <label for="">No Hp</label>
+            <input type="text" class="form-control" id="NoHp" name="NoHp" placeholder="NoHp">
+        </div>
+        <div class="form-group">
+            <label for="">Jenis Kelamin</label>
+            <select class="form-control" id="JenisKelamin" name="JenisKelamin">
+                <option value="Pria">Pria</option>
+                <option value="Wanita">Wanita</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="">Agama</label>
+            <select class="form-control" id="Agama" name="Agama">
+                <option value="Islam">Islam</option>
+                <option value="Protestan">Protestan</option>
+                <option value="Katolik">Katolik</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Buddha">Buddha</option>
+                <option value="Khonghucu">Khonghucu</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="">Tgl Lahir</label>
+            <input type="text" class="form-control" id="TglLahir" name="TglLahir" placeholder="TglLahir">
+        </div>
+    </div>
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>

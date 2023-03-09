@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div class="text-center">
+    <div class="p-3 mb-2 bg-secondary text-white">
+        <h1 class="display-4">Pilih Metode Pembayaran</h1>
+    </div>
+    <form method="get" action="/metode_pembayaran">
+        <input type="hidden" id="data_pembayaran" name="data_pembayaran" value="checkPembayaran" />
+        <div class="row">
+            <div class="col-6">
+                <div class="card bg-gradient-purple">
+                    <div class="card-body text-center">
+                        <h3>UMUM</h3>
+                        <button class="btn btn-lg btn-light" type="submit" value="Umum" name="type_pembayaran">Pilih Umum</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card bg-gradient-primary">
+                    <div class="card-body text-center">
+                        <h3>ASURANSI</h3>
+                        <button class="btn btn-lg btn-light" type="submit" value="Asuransi" name="type_pembayaran">Pilih Asuransi</button>
+                    </div>
+                </div>
+            </div><div class="col-6">
+                <div class="card bg-gradient-success">
+                    <div class="card-body text-center">
+                        <h3>BPJS</h3>
+                        <button class="btn btn-lg btn-light" type="submit" value="BPJS" name="type_pembayaran">Pilih BPJS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+
