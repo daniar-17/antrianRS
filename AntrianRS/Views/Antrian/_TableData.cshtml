@@ -1,0 +1,35 @@
+﻿@{
+    List<DataPasien> PasienList = (List<DataPasien>)ViewData["PaseinsList"];
+}
+
+@if (PasienList.Count > 0)
+{
+    int datas = 1;
+    foreach (var pasien in PasienList)
+    {
+        <tr>
+            <td>@datas</td>
+            <td>
+                <button type="button" id="btn-pilih" class="btn btn-primary btn-pilih" onclick="confirmPilih()"
+                        data-toggle="modal" data-target="#modal-default">Pilih
+                </button>
+            </td>
+            <td>@pasien.Nama</td>
+            <td>@pasien.NoHp</td>
+            <td>@pasien.TglLahir</td>
+            <td>@pasien.Agama</td>
+            <td>@pasien.JenisKelamin</td>
+        </tr>
+        datas++;
+    }
+}
+else
+{
+    <tr>
+        <td colspan="5" style="text-align: center">
+            <div>
+                No Records
+            </div>
+        </td>
+    </tr>
+}

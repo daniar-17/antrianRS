@@ -1,5 +1,6 @@
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\bin\Debug\netcoreapp3.1\appsettings.json
+C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\bin\Debug\netcoreapp3.1\Models\dataAntrian.json
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\bin\Debug\netcoreapp3.1\Models\dataPasien.json
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\bin\Debug\netcoreapp3.1\Models\tempPasien.json
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\bin\Debug\netcoreapp3.1\Models\tempSearchPasien.json
@@ -353,7 +354,6 @@ C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\A
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\AntrianRS.csproj.AssemblyReference.cache
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\AntrianRS.GeneratedMSBuildEditorConfig.editorconfig
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\AntrianRS.AssemblyInfoInputs.cache
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\AntrianRS.AssemblyInfo.cs
@@ -375,6 +375,7 @@ C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\A
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\Razor\Views\Antrian\MetodePembayaran.cshtml.g.cs
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\Razor\Views\Antrian\Poli.cshtml.g.cs
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\Razor\Views\Antrian\_AddForm.cshtml.g.cs
+C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\Razor\Views\Antrian\_TableData.cshtml.g.cs
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
@@ -389,3 +390,4 @@ C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\A
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\AntrianRS.dll
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\AntrianRS.pdb
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\AntrianRS.genruntimeconfig.cache
+C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\AntrianRS.csproj.AssemblyReference.cache

@@ -19,34 +19,21 @@
         }
         else
         {
-            <input type="hidden" id="data_table" name="data_table" value="checkTable" data-makanan="Makanan" data-sipil="WargaSipil" />
             <div class="card-body">
                 <table id="bootstrap-data-table2" class="table table-striped" style="width:100%">
                     <thead>
                         <tr class="font-weight-bold">
                             <th>#</th>
                             <th>Action</th>
-                            <th>Id Category</th>
-                            <th>Nama Category</th>
+                            <th>Nama</th>
+                            <th>No Hp</th>
+                            <th>Tanggal Lahir</th>
+                            <th>Agama</th>
+                            <th>Jenis Kelamin</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                <button type="button" id="btn-pilih" class="btn btn-warning" onclick="confirmPilih()" data-id="Aman Diki" data-nama="Aman Euy">Pilih</button>
-                            </td>
-                            <td>Aman Diki</td>
-                            <td>Aman Euy</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>
-                                <button type="button" id="btn-pilih" class="btn btn-warning" onclick="confirmPilih()" data-id="Epul Oleh" data-nama="Epul Euy">Pilih</button>
-                            </td>
-                            <td>Epul Oleh</td>
-                            <td>Epul Euy</td>
-                        </tr>
+                        @Html.Partial("~/Views/Antrian/_TableData.cshtml")
                     </tbody>
                 </table>
             </div>
@@ -61,21 +48,66 @@
     }
 </div>
 
+<form id="addForm" method="post" action="/antrian_process">
+    <div class="modal fade" id="modal-default">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Default Modal</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="">No Antrian</label>
+                        <input type="text" class="form-control" id="noAntrian" name="noAntrian" placeholder="No Antrian" value="@ViewBag.NoAntrian">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
+                    </div>
+                    <div class="form-group">
+                        <label for="">No HP</label>
+                        <input type="text" class="form-control" id="noHp" name="noHp" placeholder="NoHp">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Jenis Kelamin</label>
+                        <input type="text" class="form-control" id="jenisKelamin" name="jenisKelamin" placeholder="jenisKelamin">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Agama</label>
+                        <input type="text" class="form-control" id="agama" name="agama" placeholder="Agama">
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Daftar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
 @section Scripts
 {
     <script>
-        //$(function () {
-        //    $("#bootstrap-data-table2").DataTable();
-        //});
 
         $(document).ready(function () {
             $('#bootstrap-data-table2').DataTable();
         });
 
-        function confirmPilih() {
-            var dataId = $("#btn-pilih").attr('data-id');
-            var dataNama = $("#btn-pilih").attr('data-nama');
-        }
+        $(".btn-pilih").on('click', function () {
+            var currentRow = $(this).closest("tr");
+            var dataNama = currentRow.find("td:eq(2)").html();
+            var dataNoHp = currentRow.find("td:eq(3)").html();
+            var dataJenisKelamin = currentRow.find("td:eq(6)").html();
+            var dataAgama = currentRow.find("td:eq(5)").html();
+            $("#nama").val(dataNama);
+            $("#noHp").val(dataNoHp);
+            $("#jenisKelamin").val(dataJenisKelamin);
+            $("#Agama").val(dataAgama);
+        });
 
     </script>
 }

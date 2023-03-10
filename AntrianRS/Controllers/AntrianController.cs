@@ -56,6 +56,32 @@ namespace AntrianRS.Controllers
             return users;
         }
 
+        public static string GetNoAntrian()
+        {
+            string itemAntrian2 = "";
+            string fullPath = "Models/dataAntrian.json";
+            var jsonData = System.IO.File.ReadAllText(fullPath);
+            var pasienList = JsonConvert.DeserializeObject<List<DataAntrianAll>>(jsonData) ?? new List<DataAntrianAll>();
+            List<DataAntrianAll> users = new List<DataAntrianAll>(pasienList);
+            for (int idx = users.Count - 1; idx < users.Count; ++idx)
+            {
+                var noAntrian = users[idx].NoAntrian;
+                var idAntrian = noAntrian.Replace('A', ' ').Trim();
+                int itemAntrian = int.Parse(idAntrian) + 1;
+                itemAntrian2 = "A" + itemAntrian;
+            }
+            return itemAntrian2;
+        }
+
+        public static List<DataPasien> GetDataAllPasien()
+        {
+            string fullPath = "Models/dataPasien.json";
+            var jsonData = System.IO.File.ReadAllText(fullPath);
+            var pasienList = JsonConvert.DeserializeObject<List<DataPasien>>(jsonData) ?? new List<DataPasien>();
+            List<DataPasien> users2 = new List<DataPasien>(pasienList);
+            return users2;
+        }
+
         public IActionResult TambahDataPasien(DataPasien dataPasien)
         {
             string fullPath = "Models/dataPasien.json";
@@ -81,8 +107,6 @@ namespace AntrianRS.Controllers
                 Console.WriteLine(ex.Message);
                 return Json(new { success = false, message = "Error while saving" });
             }
-            
-           
         }
 
         public dynamic ViewDataAntrian(string valueData, string checkData)
@@ -148,6 +172,8 @@ namespace AntrianRS.Controllers
         {
             string type_pasien = ""; string data_pasien = "checkDataPasien";
             ViewDataAntrian(type_pasien, data_pasien);
+            ViewData["PaseinsList"] = GetDataAllPasien();
+            ViewBag.NoAntrian = GetNoAntrian();
             return View("~/Views/Antrian/DataPasien.cshtml");
         }
 
@@ -156,6 +182,12 @@ namespace AntrianRS.Controllers
         {
             TambahDataPasien(dataPasien);
             return View("~/Views/Antrian/DataPasien.cshtml");
+        }
+
+        [HttpPost("antrian_process")]
+        public IActionResult TambahAntrian(DataAntrianAll dataPasien)
+        {
+            return Index();
         }
     }
 }
