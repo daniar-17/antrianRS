@@ -109,6 +109,33 @@ namespace AntrianRS.Controllers
             }
         }
 
+        public IActionResult TambahDataAntrian(DataAntrianAll dataPasien)
+        {
+            string fullPath = "Models/dataAntrian.json";
+            var jsonData = System.IO.File.ReadAllText(fullPath);
+            try
+            {
+                var pasienList = JsonConvert.DeserializeObject<List<DataAntrianAll>>(jsonData) ?? new List<DataAntrianAll>();
+                System.IO.File.WriteAllText(fullPath, "[]");
+                pasienList.Add(new DataAntrianAll
+                {
+                    NoAntrian = dataPasien.NoAntrian,
+                    Nama = dataPasien.Nama,
+                    NoHp = dataPasien.NoHp,
+                    JenisKelamin = dataPasien.JenisKelamin,
+                    Agama = dataPasien.Agama,
+                });
+                var JSONResult = JsonConvert.SerializeObject(pasienList);
+                System.IO.File.WriteAllText(fullPath, JSONResult);
+                return Json(new { success = true, message = "Saved Successfully" });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return Json(new { success = false, message = "Error while saving" });
+            }
+        }
+
         public dynamic ViewDataAntrian(string valueData, string checkData)
         {
             var dataList = GetDataAntrian(valueData, checkData);
@@ -187,7 +214,8 @@ namespace AntrianRS.Controllers
         [HttpPost("antrian_process")]
         public IActionResult TambahAntrian(DataAntrianAll dataPasien)
         {
-            return Index();
+            TambahDataAntrian(dataPasien);
+            return View("~/Views/Antrian/DataPasien.cshtml");
         }
     }
 }

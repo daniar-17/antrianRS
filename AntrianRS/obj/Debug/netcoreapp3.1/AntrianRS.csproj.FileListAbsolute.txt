@@ -390,4 +390,3 @@ C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\A
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\AntrianRS.dll
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\AntrianRS.pdb
 C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\AntrianRS.genruntimeconfig.cache
-C:\DANIAR\LATE01\DANIAR N\JobSeeker\PT Rumah Kasih Indonesia\Project\AntrianRS\AntrianRS\obj\Debug\netcoreapp3.1\AntrianRS.csproj.AssemblyReference.cache
