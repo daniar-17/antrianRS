@@ -22,6 +22,7 @@ namespace AntrianRS.Controllers
             var jsonData = System.IO.File.ReadAllText(fullPath);
             var pasienList = JsonConvert.DeserializeObject<List<DataAntrian>>(jsonData) ?? new List<DataAntrian>();
             System.IO.File.WriteAllText(fullPath, "[]");
+            
             if (checkData == "checkBersih")
             {
                 users.Add(new DataAntrian
@@ -159,12 +160,19 @@ namespace AntrianRS.Controllers
             return View();
         }
 
-        [HttpGet("pasien_process")]
-        public IActionResult PasienProcess(string type_pasien, string data_pasien)
+        [HttpGet("/pasien")]
+        public IActionResult Pasien(string type_pasien, string data_pasien)
         {
             ViewDataAntrian(type_pasien, data_pasien);
-            return View("~/Views/Antrian/Index.cshtml");
+            return View("~/Views/Antrian/Pasien.cshtml");
         }
+
+        //[HttpGet("pasien_process")]
+        //public IActionResult PasienProcess(string type_pasien, string data_pasien)
+        //{
+        //    ViewDataAntrian(type_pasien, data_pasien);
+        //    return View("~/Views/Antrian/Pasien.cshtml");
+        //}
 
         [HttpGet("layanan")]
         public IActionResult Layanan(string type_layanan, string data_layanan)
