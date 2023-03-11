@@ -155,6 +155,7 @@ namespace AntrianRS.Controllers
         [HttpGet("/")]
         public IActionResult Index()
         {
+            ViewBag.InfoTambahAntrian = "Gagal";
             string valueData = ""; string checkData = "checkBersih";
             ViewDataAntrian(valueData, checkData);
             return View();
@@ -222,8 +223,19 @@ namespace AntrianRS.Controllers
         [HttpPost("antrian_process")]
         public IActionResult TambahAntrian(DataAntrianAll dataPasien)
         {
-            TambahDataAntrian(dataPasien);
-            return View("~/Views/Antrian/DataPasien.cshtml");
+            try
+            {
+                TempData["InfoTambahAntrian"] = 1;
+                TambahDataAntrian(dataPasien);
+                return RedirectToAction("Index","Antrian");
+            }
+            catch (Exception ex)
+            {
+                TempData["InfoTambahAntrian"] = "Gagal";
+                Console.WriteLine(ex.Message);
+                return RedirectToAction("Index", "Antrian");
+            }
+            
         }
     }
 }

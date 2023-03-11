@@ -1,10 +1,37 @@
 ﻿@*
-    
+
 *@
 
 <div class="text-center">
     <div class="p-3 mb-2 bg-secondary text-white">
-        <h1 class="display-4"><b>Selamat Datangs</b></h1>
+        <h1 class="display-4"><b>Selamat Datangs @TempData["InfoTambahAntrian"]</b></h1>
     </div>
     <h2 class="display-4">Di Anjuangan Pintar Kasih Group</h2>
 </div>
+
+@section Scripts
+{
+    <script>
+
+        $(function () {
+            var nilai = @TempData["InfoTambahAntrian"];
+            if (nilai == 1) {
+                Swal.fire(
+                    'Data Berhasil di Simpan',
+                    'You clicked the button!',
+                    'success'
+                )
+            }
+            @*var checkInfo = @TempData["InfoTambahAntrian"];
+            if (checkInfo == "Berhasil")
+            {
+                Swal.fire(
+                    'Data Berhasil di Simpan',
+                    'You clicked the button!',
+                    'success'
+                )
+            }*@
+        });
+
+    </script>
+}

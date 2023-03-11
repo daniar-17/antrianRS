@@ -1,0 +1,30 @@
+[
+  {
+    "Nama": "Daniar Nur Amin",
+    "NoHp": "0801",
+    "JenisKelamin": "Pria",
+    "Agama": "Islam",
+    "TglLahir": "02-01-1932"
+  },
+  {
+    "Nama": "Lilis",
+    "NoHp": "0802",
+    "JenisKelamin": "Wanita",
+    "Agama": "Islam",
+    "TglLahir": "02-01-1934"
+  },
+  {
+    "Nama": "Suratno",
+    "NoHp": "0803",
+    "JenisKelamin": "Pria",
+    "Agama": "Kristen",
+    "TglLahir": "02-01-1934"
+  },
+  {
+    "Nama": "Antonio",
+    "NoHp": "0804",
+    "JenisKelamin": "Pria",
+    "Agama": "Protestan",
+    "TglLahir": "12-12-1993"
+  }
+]
