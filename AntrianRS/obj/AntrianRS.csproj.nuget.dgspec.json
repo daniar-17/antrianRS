@@ -66,6 +66,10 @@
               "target": "Package",
               "version": "[13.0.2, )"
             },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            },
             "jquery.TypeScript.DefinitelyTyped": {
               "target": "Package",
               "version": "[3.1.2, )"

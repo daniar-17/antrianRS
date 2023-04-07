@@ -1,12 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+
 using System;
 using System.Web;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
 
 using AntrianRS.Models;
 
@@ -237,5 +241,63 @@ namespace AntrianRS.Controllers
             }
             
         }
+
+        // COBA SP [START]
+        private readonly ArtisDbContext _db;
+        public AntrianController(ArtisDbContext db)
+        {
+            _db = db;
+        }
+        // GET: api/outputs
+        [HttpGet("SP")]
+        public IActionResult GetDataArtis()
+        
+        {
+            Task<List<Artist>> artist = Getoutput();
+            Console.WriteLine(artist);
+            return View("~/Views/Antrian/Pasien.cshtml");
+        }
+        public async Task<List<Artist>> Getoutput()
+        {
+            string name = "Fai";
+            List<Artist> gagal = new List<Artist>();
+
+            gagal = _db.Artists.FromSqlRaw($"select * from artists where first_name like '{name}%'").ToList();
+            return gagal;
+            //try
+            //{
+            //    var artisA = await _db.Artists.FromSqlRaw($"select * from artists where first_name like '{name}%'").ToListAsync();
+            //    return artisA;
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //    return gagal;
+            //}
+
+            //var paramReturn = new SqlParameter
+            //{
+            //    ParameterName = "ReturnValue",
+            //    SqlDbType = System.Data.SqlDbType.VarChar,
+            //    Direction = System.Data.ParameterDirection.Output
+            //};
+
+            //List<Artist> result2 = _db.Database.ExecuteSqlRaw($"exec @returnValue = [dbo].[GetArtistFirstName] {name}", paramReturn);
+
+            //var artisA = _db.Artists.FromSqlRaw($"select * from artists where first_name like '{name}%'").ToList();
+            //Console.WriteLine(artisA);
+
+            //using (var context = new ArtisDBContext2())
+            //{
+            //    var book = context.Artist2.FromSqlRaw($"execute dbo.GetArtistFirstName {name}").ToList();
+            //    Console.WriteLine(book);
+            //}
+
+            //List<Artist> students = await _db.Artists.FromSqlRaw($"exec dbo.GetArtistFirstName {name}").ToListAsync();
+            //Console.WriteLine("Makan");
+            //_db.Database.ExecuteSqlCommand("exec dbo.GetArtistFirstName @FirstName", parameters: new[] { "Fai"});
+            //return artisA;
+        }
+        // COBA SP [END]
     }
 }
